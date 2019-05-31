@@ -94,7 +94,7 @@ if __name__ == "__main__":
     def onRead(address, data):
         print("RX: {} {}".format(str(address), data))
 
-    VERBOSE = False
+    VERBOSE = True
 
     try:
         peer = UdpPeer()
@@ -106,8 +106,8 @@ if __name__ == "__main__":
             time.sleep(1)
 
             data = "Hello there"
-            peer.write(("192.168.98.61", 7591), data)
-            # peer.broadcast((), data)
+            # peer.write(("192.168.98.61", 7591), data)
+            peer.broadcast((), data)
 
         signal.pause()
         print("Here")
